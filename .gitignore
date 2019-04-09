@@ -1,0 +1,6 @@
+.DS_STORE
+.nuxt
+.idea
+node_modules
+coverage
+*.tgz

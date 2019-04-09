@@ -1,0 +1,56 @@
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@sum.cumo/vue-states@1.0.2/dist/vue-states.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@sum.cumo/vue-history@1.0.0/dist/vue-history.umd.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/todomvc-app-css@2.2.0/index.css">
+  <style>
+  [v-cloak] {
+    display: none;
+  }
+  </style>
+</head>
+<body>
+<section id="app" class="todoapp">
+  <header class="header">
+    <h1>todos</h1>
+    <todo-input @create="Todos.create" />
+  </header>
+  <section class="main" v-show="Todos.items.length" v-cloak>
+    <input
+      id="toggle-all"
+      class="toggle-all"
+      type="checkbox"
+      :checked="Todos.allDone"
+      @click="e => Todos.updateAll({ completed: e.target.checked })"
+    />
+    <label for="toggle-all"></label>
+    <todo-list />
+  </section>
+  <footer class="footer" v-show="Todos.items.length" v-cloak>
+    <span class="todo-count">
+      <strong>{{ Todos.remaining }}</strong> {{ Todos.remaining > 1 ? 'items' : 'item' }} left
+    </span>
+    <ul class="filters">
+      <li><a href="#/all" :class="{ selected: Todos.filter === null }">All</a></li>
+      <li><a href="#/active" :class="{ selected: Todos.filter === 'active' }">Active</a></li>
+      <li><a href="#/completed" :class="{ selected: Todos.filter === 'completed' }">Completed</a></li>
+    </ul>
+    <button
+      class="clear-completed"
+      @click="Todos.removeCompleted"
+      v-show="Todos.filteredMap.completed.length"
+    >
+      Clear completed
+    </button>
+  </footer>
+</section>
+<footer class="info">
+  <p>Double-click to edit a todo</p>
+  <p>Written by <a href="http://j-lamberts.de">Johannes Lamberts</a></p>
+</footer>
+
+<script src="./index.js"></script>
+
+</body>
+</html>
