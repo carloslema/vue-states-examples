@@ -39,8 +39,5 @@ export default {
     'Inventory',
     'Cart',
   ],
-  beforeCreate() {
-    console.log('CREATE')
-  }
 }
 </script>
