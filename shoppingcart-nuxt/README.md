@@ -8,5 +8,5 @@ To run the example
 git clone https://github.com/JohannesLamberts/vue-states-examples
 cd vue-states-examples/shoppingcart-nuxt
 npm ci
-npm run serve
+npm run dev 
 ```
