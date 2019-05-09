@@ -32,7 +32,12 @@
 </template>
 
 <script>
-export default {
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+@Component({
   injectModels: ['Inventory', 'Cart'],
+})
+export default class ProductList extends Vue {
 }
 </script>

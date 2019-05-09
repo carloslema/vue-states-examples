@@ -12,12 +12,18 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
 import ExampleShop from '@/components/ExampleShop'
 
-export default {
+@Component({
   name: 'App',
   components: {
     ExampleShop,
   },
+})
+
+export default class App extends Vue {
 }
 </script>

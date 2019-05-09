@@ -18,15 +18,13 @@
 
 <script>
 import Vue from 'vue'
+import Component from 'vue-class-component'
 import Cart from '@/models/cart.ts'
 import Inventory from '@/models/inventory.ts'
 import ProductList from '@/components/ProductList'
 import ShoppingCart from '@/components/ShoppingCart'
 
-window.Inventory = Inventory
-window.Vue = Vue
-
-export default {
+@Component({
   name: 'ExampleShop',
   components: {
     ShoppingCart,
@@ -38,5 +36,7 @@ export default {
       Cart,
     }
   },
+})
+export default class ExampleShop extends Vue {
 }
 </script>
