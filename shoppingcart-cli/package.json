@@ -6,7 +6,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@sum.cumo/vue-history": "1.0.1",
+    "@sum.cumo/vue-history": "1.0.3",
     "@sum.cumo/vue-states": "1.0.2",
     "babel-polyfill": "6.26.0",
     "vue": "2.6.10",
